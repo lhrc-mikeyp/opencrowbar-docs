@@ -100,6 +100,7 @@ pygments_style = 'sphinx'
 
 if on_rtd:
     html_theme = 'default'
+    display_github = False
 else:
     import sphinx_rtd_theme
     html_theme = 'sphinx_rtd_theme'
