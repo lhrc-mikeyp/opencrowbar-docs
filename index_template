@@ -1,0 +1,99 @@
+.. OpenCrowbar documentation master file for sphinx
+
+OpenCrowbar Documentation
+=========================
+
+Welcome to the OpenCrowbar Project - the gateway to a new hardware
+provisioning experience that delivers the best of software deployment
+automation and orchestration. OpenCrowbar is a successor of the 3 year-old
+& still active Crowbar project. It derives much of its functionality
+from its predecessor, but offers a lot more.
+
+OpenCrowbar documentation is divided into the following sections:
+
+* :ref:`deploy-guide`
+* :ref:`development-guide`
+* :ref:`faq`
+* :ref:`license`
+* :ref:`principles`
+* :ref:`user-guide`
+
+
+.. filelist::
+
+.. _`deploy-guide`:
+
+Deploy Guide
+------------
+
+.. toctree::
+   :maxdepth: 2
+
+deploy-guide-files::
+
+
+.. _`development-guide`:
+
+Development Guide
+-----------------
+
+.. toctree::
+   :maxdepth: 2
+
+development-guide-files::
+
+
+.. _`faq`:
+
+Frequently Asked Questions (FAQ)
+--------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+faq-files::
+
+
+.. _`license`:
+
+OpenCrowbar License
+-------------------
+
+.. toctree::
+   :maxdepth: 2
+
+license-files::
+
+
+.. _`principles`:
+
+Operational Principles
+----------------------
+
+.. toctree::
+   :maxdepth: 2
+
+principles-files::
+
+
+.. _`user-guide`:
+
+User Guide
+----------
+
+.. toctree::
+   :maxdepth: 2
+
+user-guide-files::
+
+
+.. TODO the following need some love and attention before enabling them
+
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
+
+
