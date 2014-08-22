@@ -18,6 +18,10 @@ import sys, os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.append(os.path.abspath('.'))
 
+# Read the docs hosting 
+
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
 # -- General configuration -----------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
@@ -94,9 +98,12 @@ pygments_style = 'sphinx'
 
 #html_theme = 'sphinxdoc'
 
-import sphinx_rtd_theme
-html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+if on_rtd:
+    html_theme = 'default'
+else:
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 #import sphinx_bootstrap_theme
 #html_theme = 'bootstrap'
