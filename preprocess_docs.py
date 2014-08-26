@@ -10,13 +10,14 @@ import os.path
 import pprint
 import subprocess
 
-source_docs_root = "/home/mikeyp/opencrowbar/core/doc"
-processed_docs_root = "./doc"
+docs_dir = "doc"
+source_docs_root = "/home/mikeyp/opencrowbar/core/"
+processed_docs_root = "./"
 
 def copy_to_staging(src, dest):
     """copies file tree from source to a staging area for processing"""
     command = [ '/bin/cp', '-r', src, dest, ]
-    subprocess.call(command)
+    subprocess.check_call(command)
 
 def generate_file_list(directory):
     """walk the file tree starting at dir , 
@@ -38,7 +39,7 @@ def sort_crowbar():
 
 # make a copy of the source, so we don't accidentally mess up a checkout
 
-copy_to_staging(source_docs_root, processed_docs_root)
+copy_to_staging(os.path.join(source_docs_root,docs_dir), processed_docs_root)
 
 # this script has some knowledge of of the 'top level' documentation sections 
 # to help generate a cleaner documentation index depsite the markdown to
@@ -61,7 +62,7 @@ index_template.close()
 
 for s in sections:
     print 'processing section: ', s[0]
-    files = generate_file_list(os.path.join(processed_docs_root,s[0]))
+    files = generate_file_list(os.path.join(processed_docs_root, docs_dir, s[0]))
     pprint.pprint(files)
     for file in files:
         command = [
@@ -74,7 +75,7 @@ for s in sections:
             os.path.abspath(os.path.splitext(file)[0] + '.rst'),
             os.path.abspath(file)
         ]
-        subprocess.call(command)
+        subprocess.check_call(command)
 
     # create toc list and merge it into the sphinx
     # index file
